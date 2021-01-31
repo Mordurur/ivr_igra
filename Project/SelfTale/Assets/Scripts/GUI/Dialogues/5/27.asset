@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4627a0fdbd1eb6c42a1b2c2753d6815c, type: 3}
+  m_Name: 27
+  m_EditorClassIdentifier: 
+  DialogueID: 27
+  choiceName: 
+  options: 0
+  lines:
+  - lineId: 0
+    speed: 1
+    faceId: 30
+    speaker: "\u0418\u043D\u0442\u0435\u0442"
+    text: "\u0422\u0435\u043B\u0435\u043F\u043E\u0440\u0442\u0430\u0446\u0438\u044F
+      \u0433\u043E\u0442\u043E\u0432\u0430, \u044F \u0430\u043A\u0442\u0438\u0432\u0438\u0440\u0443\u044E
+      \u0435\u0435!"
+  choiceText: []
+  nextDialogues: []

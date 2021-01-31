@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Kunai
+  m_Controller: {fileID: 9100000, guid: e287b13e709c2f3449311e194fffbeee, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 25a7393e8e1e61d4ab88fff2ff07452a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d4030651e93d8a64ebbeddbdf0413d4f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1d103d2de77dcd448b48b582ea334a7d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 441c9bfa93410534781783e385f2bdac, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5c180dc9b6e35b54d826769a587084c2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5dd6d11b49161c249a2740c80111a804, type: 2}
