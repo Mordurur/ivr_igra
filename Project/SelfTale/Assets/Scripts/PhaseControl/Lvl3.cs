@@ -59,7 +59,7 @@ public class Lvl3 : PhaseController
         npcs.SetActive(false);
         int t = 0;
         ArrayList arrayList = new ArrayList();
-        while (t < 120)
+        while (t < 40)
         {
             GameObject i = Instantiate(waveOfEnemy, enemySpawner.transform.position, Quaternion.identity);
             i.GetComponent<EnemyBase>().Flip();

@@ -17,10 +17,7 @@ public class Boss3 : EnemyBase
 
     [SerializeField] GameObject walls;
 
-    float pdistance;
-
     int prevAttack = 1;
-    bool battleStart = false;
 
     float deathTimer = 0f;
 
@@ -28,10 +25,14 @@ public class Boss3 : EnemyBase
     {
         base.Start();
         bossBar = gameObject.GetComponentInChildren<UnityEngine.UI.Slider>();
-        walls.SetActive(false);
-        animator.enabled = false;
-
+        walls.SetActive(true);
+        animator.enabled = true;
+        NextAttack();
+        npcs.SetActive(false);
     }
+
+
+
     void NextAttack()
     {
         int next;
@@ -61,23 +62,10 @@ public class Boss3 : EnemyBase
         }
     }
 
-    protected override void Update()
-    {
-        base.Update();
-        pdistance = Mathf.Abs(transform.position.x - playerChar.transform.position.x);
-        if (!battleStart && pdistance < 5)
-        {
-            walls.SetActive(true);
-            battleStart = true;
-            animator.enabled = true;
-            NextAttack();
-        }
-    }
-
     protected override void FixedUpdate()
     {
         deathTimer += Time.fixedDeltaTime;
-        if (deathTimer > 120)
+        if (deathTimer > 40)
         {
             Damage(10000, 0, 0);
         } 
@@ -133,7 +121,7 @@ public class Boss3 : EnemyBase
             yield return new WaitForSeconds(.25f);
         }
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.25f);
 
         NextAttack();
 
@@ -155,7 +143,7 @@ public class Boss3 : EnemyBase
         }
 
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.25f);
 
         NextAttack();
     }
@@ -175,7 +163,7 @@ public class Boss3 : EnemyBase
             collider2D1.enabled = false;
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         NextAttack();
 
@@ -201,7 +189,7 @@ public class Boss3 : EnemyBase
         int dir = Random.Range(0, 2) == 1 ? 1 : -1;
         GameObject thisAttack = Instantiate(prefab4, gameObject.transform.position + new Vector3(10,0,0) * dir, Quaternion.identity);
         float elapsed = 0f;
-        Vector3 velocity2 = new Vector3(-6, 0, 0) * dir;
+        Vector3 velocity2 = new Vector3(-8, 0, 0) * dir;
         while (Mathf.Abs(gameObject.transform.position.x - thisAttack.transform.position.x) > 1)
         {
 
@@ -218,7 +206,7 @@ public class Boss3 : EnemyBase
 
         Destroy(thisAttack);
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.2f);
 
         NextAttack();
     }
@@ -244,20 +232,21 @@ public class Boss3 : EnemyBase
 
     public override IEnumerator Die()
     {
+        npcs.SetActive(true);
         float elapsed = 0.0f;
         StopCoroutine(A1());
         StopCoroutine(A2());
         StopCoroutine(A3());
+        StopCoroutine(A4());
         this.enabled = false;
         canWalk = false;
-        Camera.main.GetComponent<CameraFollow>().ShakeCamera(0.1f, 1f, 3f);
-        while (elapsed < 5)
+        while (elapsed < 1)
         {
-            spriteRenderer.color = Color.Lerp(Color.white, Color.cyan, elapsed / 5);
+            spriteRenderer.color = Color.Lerp(Color.white, Color.cyan, elapsed / 1);
             elapsed += Time.deltaTime;
             yield return null;
         }
-        yield return new WaitForSeconds(0.3f);
+        Camera.main.GetComponent<CameraFollow>().ShakeCamera(0.1f, 1f, 3f);
         phaseController.DialogueAction(1337, 228);
         GameMaster.GM.progress.diamond += 1;
         phaseController.kills++;

@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 2}
+  m_Size: {x: 0.4, y: 2}
   m_EdgeRadius: 0
 --- !u!95 &3650118885824376583
 Animator:
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c438ae82fa8bec4e9d3d0302fa81357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 300
   attackDamage: 1
   isDamagable:
     serializedVersion: 2
@@ -151,15 +151,15 @@ MonoBehaviour:
   arm: 30
   kbackres: 0
   health: 0
-  moveSpeed: 10
+  moveSpeed: 6
   maxJumpHeight: 6
   timeToJumpApex: 0.5
   maxAttackTimer: 2
   maxAttackTimer2: 4
-  attackCenter1: {x: 0, y: 0}
-  attackSize1: {x: 0, y: 0}
-  attackCenter21: {x: 0, y: 0}
-  attackSize21: {x: 0, y: 0}
+  attackCenter1: {x: 0.8089629, y: -0.148157}
+  attackSize1: {x: 2.117926, y: 0.4044673}
+  attackCenter21: {x: 0.2449677, y: -0.09117377}
+  attackSize21: {x: 2.12932, y: 1.749272}
 --- !u!114 &3650118885824376580
 MonoBehaviour:
   m_ObjectHideFlags: 0

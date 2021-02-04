@@ -56,6 +56,7 @@ public class Lvl5 : PhaseController
         {
             GameMaster.GM.progress.levelDatas[5].completed = true;
             SetFinishLevel(5);
+            SaveLoad.Save();
         }
     }
 }

@@ -45,7 +45,6 @@ public class InstantiatePlayer : MonoBehaviour
         player.GetComponent<Player>().skill3modifier = 1 + GameMaster.GM.progress.skillData.skill3Level * 0.1f;
         player.GetComponent<Player>().sliderHP = slider1;
         player.GetComponent<Player>().sliderSTA = slider2;
-
         weaponData1.weaponDamage += weaponData1.weaponDamage / 10 * weaponData1.level;
         weapon.GetComponent<WeaponController>().SetWeapon(weaponData1);
 

@@ -22,6 +22,8 @@ public class PhaseController : MonoBehaviour
 
     public virtual void Awake()
     {
+        GameMaster.stagnate = false;
+        GameMaster.enabledMovement = true;
         displayer = FindObjectOfType<DialogueDisplayer>();
         GameObject.Find("Buttons").SetActive(GameMaster.GM.progress.enabledButtons);
     }

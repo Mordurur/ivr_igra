@@ -56337,7 +56337,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 519420031}
     - target: {fileID: 896024471007016332, guid: e50f8a73338af9f4e9be6c777e3049a2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -56443,6 +56443,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 896024471007016334, guid: e50f8a73338af9f4e9be6c777e3049a2,
+        type: 3}
+      propertyPath: phaseController
+      value: 
+      objectReference: {fileID: 1967664748}
     - target: {fileID: 5357048457702712916, guid: e50f8a73338af9f4e9be6c777e3049a2,
         type: 3}
       propertyPath: m_AnchorMax.x

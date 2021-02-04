@@ -229,7 +229,7 @@ MonoBehaviour:
   rendererA: {fileID: 0}
   spawnObject: {fileID: 38433466399651988, guid: 808bb76a1bac72d449373bb09c09b7d1,
     type: 3}
-  runtimeAnimatorController: {fileID: 9100000, guid: 812cf25b5885a4743862aed70ee104f5,
+  runtimeAnimatorController: {fileID: 22100000, guid: 6fa71f1f1c0b5cd4ca258e378bf19d76,
     type: 2}
   isEnemy:
     serializedVersion: 2

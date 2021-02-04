@@ -46,8 +46,8 @@ public class Lvl2 : PhaseController
         }
         if (levelPhase == 3)
         {
-            GameMaster.stagnate = true;
             displayer.Display(ph3Dialogue);
+            GameMaster.stagnate = true;
         }
     }
 

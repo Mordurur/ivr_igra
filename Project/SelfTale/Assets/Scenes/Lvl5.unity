@@ -11013,7 +11013,7 @@ GameObject:
   - component: {fileID: 1796903475}
   - component: {fileID: 1796903474}
   - component: {fileID: 1796903473}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11071,12 +11071,12 @@ CompositeCollider2D:
   m_CompositePaths:
     m_Paths:
     - - {x: 12.99997, y: -16}
-      - {x: 12.999974, y: 25.00001}
-      - {x: 11.99999, y: 24.999975}
+      - {x: 12.99997, y: 25}
+      - {x: 12, y: 24.999971}
       - {x: 11.99997, y: -15}
       - {x: -13, y: -14.999971}
-      - {x: -13.000026, y: 25.00001}
-      - {x: -14.00001, y: 24.999975}
+      - {x: -13.00003, y: 25}
+      - {x: -14, y: 24.999971}
       - {x: -14.000029, y: -14}
       - {x: -15, y: -14.000029}
       - {x: -14.999971, y: -16}
@@ -12661,6 +12661,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 896024471007016334, guid: e50f8a73338af9f4e9be6c777e3049a2,
+        type: 3}
+      propertyPath: phaseController
+      value: 
+      objectReference: {fileID: 1967664748}
     - target: {fileID: 5357048457702712916, guid: e50f8a73338af9f4e9be6c777e3049a2,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -12827,6 +12832,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5521340297765664840, guid: 89cba88603f0c9741bd54678a615f92d,
         type: 3}
+      propertyPath: arm
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5521340297765664840, guid: 89cba88603f0c9741bd54678a615f92d,
+        type: 3}
+      propertyPath: npcs
+      value: 
+      objectReference: {fileID: 1570470357}
+    - target: {fileID: 5521340297765664840, guid: 89cba88603f0c9741bd54678a615f92d,
+        type: 3}
       propertyPath: walls
       value: 
       objectReference: {fileID: 1796903471}
@@ -12835,6 +12850,11 @@ PrefabInstance:
       propertyPath: ground
       value: 
       objectReference: {fileID: 1746444451}
+    - target: {fileID: 5521340297765664840, guid: 89cba88603f0c9741bd54678a615f92d,
+        type: 3}
+      propertyPath: maxHealth
+      value: 9999
+      objectReference: {fileID: 0}
     - target: {fileID: 5521340297765664840, guid: 89cba88603f0c9741bd54678a615f92d,
         type: 3}
       propertyPath: movingPlatforms

@@ -11,6 +11,7 @@ using UnityEngine;
 public class ButtonUpDown : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
 {
     public UnityEvent onPointerDown;
+
     public UnityEvent onPointerUp;
 
     public UnityEvent whilePointerPressed;

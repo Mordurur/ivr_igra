@@ -80,7 +80,7 @@ public class OneMelee : EnemyBase
             }
         }
 
-        animator.SetBool("walking", Mathf.Abs(velocity.x) == 1 && canWalk);
+        animator.SetBool("walking", Mathf.Abs(velocity.x) == moveSpeed && canWalk);
 
     }
 

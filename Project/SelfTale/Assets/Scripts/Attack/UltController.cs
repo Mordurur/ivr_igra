@@ -90,12 +90,16 @@ public class UltController : MonoBehaviour
 
     IEnumerator Ult1()
     {
+        print(GameMaster.GM.items.weaponDatas[weaponID].weaponID);
+        print(GameMaster.GM.items.weaponDatas[weaponID].defencePierce);
+        print(GameMaster.GM.items.weaponDatas[weaponID].knockBack);
+
         StartCoroutine(CanAttack(4f));
         float elapsed = 0f;
         float sinceLastSpawn = 0f;
         while(elapsed < 0.2f)
         {
-            if (sinceLastSpawn > 0.1f)
+            if (sinceLastSpawn > 0.02f)
             {
                 GameObject columnOfFire = Instantiate(spawnObject, player.transform.position, Quaternion.identity);
                 StartCoroutine(WaitDestroy(columnOfFire, .417f));
@@ -105,7 +109,7 @@ public class UltController : MonoBehaviour
                 }
                 sinceLastSpawn = 0f;
             }
-            player.controller.Move(new Vector2(20,0) * Time.deltaTime * ((faceRight)?-1:1));
+            player.controller.Move(new Vector2(40,0) * Time.deltaTime * ((faceRight)?-1:1));
             yield return null;
             elapsed += Time.deltaTime;
             sinceLastSpawn += Time.deltaTime;

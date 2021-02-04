@@ -28,18 +28,17 @@ public class DialogueDisplayer : MonoBehaviour
     [SerializeField] GameObject choice3;
 
     private GameObject[] choicesList;
-    private PhaseController phaseController;
+    [SerializeField] PhaseController phaseController;
 
     
 
-    private void Start()
+    private void Awake()
     {
         choicesList = new GameObject[3];
         choicesList[0] = choice1;
         choicesList[1] = choice2;
         choicesList[2] = choice3;
         sentences = new Queue<DialogueLine>();
-        phaseController = FindObjectOfType<PhaseController>().GetComponent<PhaseController>();
     }
 
     private void Update()
