@@ -1,6 +1,6 @@
 # Борисенко Андрей - Android игра "SelfTale"
 
-### Группа: 10 - И - 2
+### Группа: 11 - И - 2
 ### Электронная почта: andreybi69@gmail.com
 ### VK: https://vk.com/mrtrollius
 
