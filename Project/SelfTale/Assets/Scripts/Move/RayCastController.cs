@@ -8,7 +8,7 @@ public class RayCastController : MonoBehaviour
 {
     public LayerMask cMask;
     public const float skinWidth = .0015f;
-    const float dstBetweenRays = .05f;
+    const float dstBetweenRays = .1f;
 
     [HideInInspector] public int horizontalRayCount;
     [HideInInspector] public int verticalRayCount;

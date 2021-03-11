@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8707937606219880915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -172,11 +172,12 @@ MonoBehaviour:
   goldReward: 1000
   arm: 10
   kbackres: 1
+  flipWait: 0.6
   health: 1500
   prefab1: {fileID: 2990934389975978461, guid: 945d81534162b954f95d7f9f4ee38800, type: 3}
   prefab2: {fileID: 8797736586027264443, guid: 6c21bb75e3e39674290a957e2f04e925, type: 3}
   prefab3: {fileID: 587767273776303029, guid: b74bae8b376e3544ea06b1682901407b, type: 3}
   prefab2Summon: {fileID: 5027127016279925672, guid: 56c4e083a4eb91e488f7e4d2a14df613,
     type: 3}
+  canvass: {fileID: 0}
   walls: {fileID: 0}
-  finishDialogue: {fileID: 11400000, guid: f7e2f2c2d588d4a4685f318887ba47a6, type: 2}

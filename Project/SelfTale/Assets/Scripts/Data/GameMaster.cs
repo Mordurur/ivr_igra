@@ -26,8 +26,6 @@ public class GameMaster : MonoBehaviour
             GM = this;
 
         DontDestroyOnLoad(this);
-        SaveLoad.Load();
-        SaveLoad.Save();
     }
 }
 

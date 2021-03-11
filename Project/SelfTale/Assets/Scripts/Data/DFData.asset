@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a41826b244fd2542940119f827e06a4, type: 3}
+  m_Name: DFData
+  m_EditorClassIdentifier: 
+  faceDatas:
+  - face:
+    - {fileID: 21300000, guid: 70f2cf54deebe20469d97daaaff239a8, type: 3}
+    faceId: -1
+  - face:
+    - {fileID: -7975296011112270518, guid: 653f9e5cdda9ff34c91d376d336c0cb5, type: 3}
+    - {fileID: -8517259101916233011, guid: 653f9e5cdda9ff34c91d376d336c0cb5, type: 3}
+    - {fileID: 3269720341043232739, guid: 653f9e5cdda9ff34c91d376d336c0cb5, type: 3}
+    - {fileID: -6264056667315906660, guid: 653f9e5cdda9ff34c91d376d336c0cb5, type: 3}
+    - {fileID: 3483175118347857604, guid: 653f9e5cdda9ff34c91d376d336c0cb5, type: 3}
+    - {fileID: 7496194263973221227, guid: 653f9e5cdda9ff34c91d376d336c0cb5, type: 3}
+    - {fileID: 1750036959020914242, guid: 653f9e5cdda9ff34c91d376d336c0cb5, type: 3}
+    - {fileID: 6660135082707588203, guid: 653f9e5cdda9ff34c91d376d336c0cb5, type: 3}
+    - {fileID: -755412078657393542, guid: 653f9e5cdda9ff34c91d376d336c0cb5, type: 3}
+    - {fileID: -5878432615065155744, guid: 653f9e5cdda9ff34c91d376d336c0cb5, type: 3}
+    faceId: 0
+  - face:
+    - {fileID: 8884945154963707709, guid: 2ac0a23dfdc1f1641a28086afcc84813, type: 3}
+    - {fileID: -5619223101288454740, guid: 2ac0a23dfdc1f1641a28086afcc84813, type: 3}
+    - {fileID: -1282353089985943991, guid: 2ac0a23dfdc1f1641a28086afcc84813, type: 3}
+    - {fileID: -6273335935628319128, guid: 2ac0a23dfdc1f1641a28086afcc84813, type: 3}
+    - {fileID: -6811530634602736405, guid: 2ac0a23dfdc1f1641a28086afcc84813, type: 3}
+    - {fileID: 5644255576524498959, guid: 2ac0a23dfdc1f1641a28086afcc84813, type: 3}
+    - {fileID: -2513000766315880267, guid: 2ac0a23dfdc1f1641a28086afcc84813, type: 3}
+    - {fileID: 4359302976010076319, guid: 2ac0a23dfdc1f1641a28086afcc84813, type: 3}
+    - {fileID: -8448380161917301756, guid: 2ac0a23dfdc1f1641a28086afcc84813, type: 3}
+    - {fileID: -8448380161917301756, guid: 2ac0a23dfdc1f1641a28086afcc84813, type: 3}
+    faceId: 1
+  - face:
+    - {fileID: 247948193155301027, guid: 4b2871748da6dd74482fb8af54008e1b, type: 3}
+    - {fileID: 5665367356910955456, guid: 4b2871748da6dd74482fb8af54008e1b, type: 3}
+    - {fileID: 2255873161831799482, guid: 4b2871748da6dd74482fb8af54008e1b, type: 3}
+    - {fileID: 2764459404980416770, guid: 4b2871748da6dd74482fb8af54008e1b, type: 3}
+    - {fileID: -1539280124160386802, guid: 4b2871748da6dd74482fb8af54008e1b, type: 3}
+    - {fileID: 6155124257509285006, guid: 4b2871748da6dd74482fb8af54008e1b, type: 3}
+    - {fileID: 6155124257509285006, guid: 4b2871748da6dd74482fb8af54008e1b, type: 3}
+    - {fileID: 6155124257509285006, guid: 4b2871748da6dd74482fb8af54008e1b, type: 3}
+    - {fileID: 6155124257509285006, guid: 4b2871748da6dd74482fb8af54008e1b, type: 3}
+    - {fileID: 6155124257509285006, guid: 4b2871748da6dd74482fb8af54008e1b, type: 3}
+    faceId: 2
+  - face:
+    - {fileID: -5796296716797629361, guid: d06894dbf510eec41ba069ae273983d2, type: 3}
+    - {fileID: 4060430944062553999, guid: d06894dbf510eec41ba069ae273983d2, type: 3}
+    - {fileID: -7452354881229380077, guid: d06894dbf510eec41ba069ae273983d2, type: 3}
+    - {fileID: 3187251686201723833, guid: d06894dbf510eec41ba069ae273983d2, type: 3}
+    - {fileID: 6376346640308399398, guid: d06894dbf510eec41ba069ae273983d2, type: 3}
+    - {fileID: -387194407565099386, guid: d06894dbf510eec41ba069ae273983d2, type: 3}
+    - {fileID: 8400797818635741480, guid: d06894dbf510eec41ba069ae273983d2, type: 3}
+    - {fileID: 3304491555341524107, guid: d06894dbf510eec41ba069ae273983d2, type: 3}
+    - {fileID: 303867124124066941, guid: d06894dbf510eec41ba069ae273983d2, type: 3}
+    - {fileID: -2546210994524637359, guid: d06894dbf510eec41ba069ae273983d2, type: 3}
+    faceId: 3

@@ -29,6 +29,9 @@ public class Lvl1 : PhaseController
 
     [SerializeField] GameObject shopObject;
 
+    [SerializeField] GameObject cs1;
+    [SerializeField] GameObject cs2;
+
     public bool hsSpoken = false;
     public bool fSpoken = false;
 
@@ -220,6 +223,16 @@ public class Lvl1 : PhaseController
             GameMaster.stagnate = false;
             SaveLoad.Save();
             SceneManager.LoadScene(1);
+        }
+        if (dId == 1 && sId == 3)
+        {
+            cs2.SetActive(true);
+            cs1.SetActive(false);
+        }
+        if (dId == 1 && sId == 5)
+        {
+            cs2.SetActive(false);
+            cs1.SetActive(true);
         }
         if (dId == 5 && sId == -1)
         {

@@ -9,8 +9,8 @@ public class Lvl3 : PhaseController
     [SerializeField] Dialogue ph2Dialogue;
     [SerializeField] Dialogue ph3Dialogue;
 
-    [SerializeField] GameObject waveOfEnemy;
-    [SerializeField] GameObject enemySpawner;
+    [SerializeField] GameObject[] waveOfEnemy;
+    [SerializeField] GameObject[] enemySpawner;
 
     [SerializeField] GameObject blindfold;
 
@@ -61,16 +61,19 @@ public class Lvl3 : PhaseController
         ArrayList arrayList = new ArrayList();
         while (t < 40)
         {
-            GameObject i = Instantiate(waveOfEnemy, enemySpawner.transform.position, Quaternion.identity);
-            i.GetComponent<EnemyBase>().Flip();
+            Random.InitState(System.DateTime.Now.Millisecond);
+            int nextObj = Random.Range(0,waveOfEnemy.Length);
+            Random.InitState(System.DateTime.Now.Millisecond);
+            int nextSpawner = Random.Range(0,enemySpawner.Length);
+            GameObject i = Instantiate(waveOfEnemy[nextObj], enemySpawner[nextSpawner].transform.position, Quaternion.identity);
             arrayList.Add(i);
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(8);
 
-            t += 5;
+            t += 8;
         }
         foreach (GameObject obj in arrayList)
         {
-            Destroy(obj);
+            obj.GetComponent<EnemyBase>().Damage(99999,100,0);
         }
         if (levelPhase == 1)
             displayer.Display(ph2Dialogue);

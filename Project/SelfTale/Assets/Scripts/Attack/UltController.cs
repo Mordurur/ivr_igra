@@ -90,9 +90,6 @@ public class UltController : MonoBehaviour
 
     IEnumerator Ult1()
     {
-        print(GameMaster.GM.items.weaponDatas[weaponID].weaponID);
-        print(GameMaster.GM.items.weaponDatas[weaponID].defencePierce);
-        print(GameMaster.GM.items.weaponDatas[weaponID].knockBack);
 
         StartCoroutine(CanAttack(4f));
         float elapsed = 0f;
@@ -131,7 +128,45 @@ public class UltController : MonoBehaviour
 
     IEnumerator Ult3()
     {
-        return null;
+        StartCoroutine(CanAttack(10f));
+        GameObject lazer = Instantiate(spawnObject, gameObject.transform.position, Quaternion.identity);
+        SpriteRenderer lazerSize = lazer.GetComponent<SpriteRenderer>();
+        BoxCollider2D lazerCollider = lazer.GetComponent<BoxCollider2D>();
+
+        if (!faceRight)
+        {
+            Vector3 theScale = lazer.transform.localScale;
+            theScale.x *= -1;
+            lazer.transform.localScale = theScale;
+        }
+        float elapsed = 0.0f;
+        float duration = 0.3f;
+        while (elapsed < duration)
+        {
+            lazerSize.size = new Vector2( Mathf.Lerp(0.1f, 20, elapsed / duration),2);
+            lazerCollider.size = lazerSize.size;
+            lazerCollider.offset = new Vector2(lazerSize.size.x / 2, 0);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        Collider2D[] enemies = Physics2D.OverlapBoxAll(lazerCollider.bounds.center, lazerCollider.bounds.size, 0f, isEnemy);
+
+        foreach (Collider2D enemy in enemies)
+        {
+            EnemyBase enemyBase = enemy.GetComponent<EnemyBase>();
+            if (!enemyBase)
+            {
+                continue;
+            }
+            enemyBase.Damage(GameMaster.GM.items.weaponDatas[weaponID].weaponDamage * 10 * ultModifier, 60, GameMaster.GM.items.weaponDatas[weaponID].knockBack);
+            if (enemyBase.health < 0)
+            {
+                player.Damage(-1);
+            }
+        }
+
+        Destroy(lazer);
     }
     private void SpawnFlyingObject(Vector3 offset1, float flySpeed1, float damage, float bulletLife, float[] colliderProperties)
     {

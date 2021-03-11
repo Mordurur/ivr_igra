@@ -11,9 +11,6 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] GameObject toggleScreenControls;
 
-    [SerializeField] TextAsset OGDataChar;
-    [SerializeField] TextAsset OGDataItem;
-    [SerializeField] TextAsset OGDataProgress;
 
     [SerializeField] private GameObject renameButton;
     [SerializeField] private TextMeshProUGUI infoHead;
@@ -52,6 +49,13 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        int doReset = PlayerPrefs.GetInt("resetOnstart");
+        if (doReset == 1)
+        {
+            PlayerPrefs.SetInt("resetOnstart", 0);
+            PlayerPrefs.Save();
+            SaveLoad.Save();
+        }
         SaveLoad.Load();
         renameButton.GetComponent<TextMeshProUGUI>().SetText(GameMaster.GM.characters.playerName);
         DisableButtons();
@@ -63,14 +67,9 @@ public class MainMenu : MonoBehaviour
 
     public void ResetProgress()
     {
-        GameMaster.GM.characters = JsonUtility.FromJson<CharacterData>(OGDataChar.ToString());
-        GameMaster.GM.items = JsonUtility.FromJson<ItemData>(OGDataItem.ToString());
-        GameMaster.GM.progress = JsonUtility.FromJson<ProgressData>(OGDataProgress.ToString());
-        gold.text = GameMaster.GM.progress.gold.ToString();
-        diamond.text = GameMaster.GM.progress.diamond.ToString();
-        DisableButtons();
-        upgradeButton.enabled = false;
-        SaveLoad.Save();
+        PlayerPrefs.SetInt("resetOnstart", 1);
+        PlayerPrefs.Save();
+        Application.Quit();
     }
 
     public void SetButtons()

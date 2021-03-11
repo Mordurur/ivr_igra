@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Enemy_Spitter
+  m_Controller: {fileID: 9100000, guid: b444d64241b7f754b9b5af6b73f04359, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d78abd093eaa0634e9511b6ceee897b2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 97d3bb822071ec645b9b3fb787b4315c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ee52923100c268d47ab476585ebce119, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: eb5f1701b6bfaec4e82454fc0026ba81, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2ac1bdfe686a2334990a61dc1e8b0560, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: eb5f1701b6bfaec4e82454fc0026ba81, type: 2}

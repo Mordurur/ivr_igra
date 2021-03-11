@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 3513654333879242908}
   m_Layer: 11
   m_Name: Boss2
-  m_TagString: Untagged
+  m_TagString: Damagable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -272,12 +272,12 @@ MonoBehaviour:
   goldReward: 1000
   arm: 50
   kbackres: 1
+  flipWait: 1
   health: 1000
   prefab1: {fileID: 5412175139396935672, guid: ff5640ccafab91b42b3e6c5a3edf70fc, type: 3}
   prefab2: {fileID: 8215121197508502361, guid: 1993b1d5c30366841abf545c9b1bdfb4, type: 3}
   prefab3: {fileID: 4610783618954734599, guid: 58aa79109577fc74d948aaa11c4a5c3f, type: 3}
   walls: {fileID: 0}
-  finishDialogue: {fileID: 11400000, guid: 7e95d95de0ec2e344acb0da11410a8a4, type: 2}
 --- !u!1 &3513654334553375567
 GameObject:
   m_ObjectHideFlags: 0

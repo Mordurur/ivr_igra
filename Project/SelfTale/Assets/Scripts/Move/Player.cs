@@ -64,6 +64,8 @@ public class Player : MonoBehaviour
     private float sinceLastDash = 0;
 
     private bool onGround = false;
+    private float timeInAir = 0;
+
     private float jumpTimer = 0f;
     private bool isJumping = false;
 
@@ -104,7 +106,11 @@ public class Player : MonoBehaviour
         {
             return;
         }
-
+        bool onGround2 = timeInAir < 0.02f;
+        if (!onGround)
+        {
+            timeInAir += Time.deltaTime;
+        }
 
         if (GameMaster.enabledMovement && (Input.GetKey(KeyCode.DownArrow) || InputMixer.CrouchS))
         {
@@ -200,20 +206,20 @@ public class Player : MonoBehaviour
             isDashing = false;
             dashTime = 0;
         }
-        if (!isCrouching && (Input.GetKeyDown(KeyCode.W) || InputMixer.Skill3DownS))
+        if (!isCrouching && (Input.GetKeyDown(KeyCode.C) || InputMixer.Skill3DownS))
         {
             ult.Ultimate(facingRight, skill3modifier);
         }
 
         if (onGround && !isCrouching && !isDashing && weapon.CanWalk())
         {
-            if (GameMaster.enabledMovement && (Input.GetKeyDown(KeyCode.R) || InputMixer.Skill1DownS) && stamina > 0)
+            if (GameMaster.enabledMovement && (Input.GetKeyDown(KeyCode.Z) || InputMixer.Skill1DownS) && stamina > 0)
             {
                 weapon.Hit1(facingRight, skill1modifier);
                 stamina -= 1;
                 StartCoroutine( DecreaseSlider(sliderSTA, .2f, stamina / 10));
             }
-            else if (GameMaster.enabledMovement && (Input.GetKeyDown(KeyCode.E) || InputMixer.Skill2DownS) && stamina > 0)
+            else if (GameMaster.enabledMovement && (Input.GetKeyDown(KeyCode.X) || InputMixer.Skill2DownS) && stamina > 0)
             {
                 weapon.Hit2(facingRight, skill2modifier);
                 stamina -= 2;
@@ -235,12 +241,14 @@ public class Player : MonoBehaviour
             weaponRenderer.enabled = true;
         }
 
+
+
         animator.SetBool("isMoving", velocity.x != 0);
         animator.SetBool("floatGravity", floatGravity);
         animator.SetBool("isJumping", isJumping);
         animator.SetBool("isDashing", isDashing);
         animator.SetBool("isCrouching", isCrouching);
-        animator.SetBool("onGround", onGround);
+        animator.SetBool("onGround", onGround2);
     }
 
     void FixedUpdate()
@@ -293,6 +301,7 @@ public class Player : MonoBehaviour
             velocity.y = 0;
             doubleJumpTimer = 0;
             isJumping = false;
+            timeInAir = 0;
         }
         else if (controller.collisionInfo.above)
         {
@@ -324,6 +333,15 @@ public class Player : MonoBehaviour
 
     public void Damage(float dmg)
     {
+        if (dmg < 0)
+        {
+            if (health - dmg <= maxHealth)
+            {
+                health -= dmg;
+            }
+            StartCoroutine(DDDamaged(true));
+            return;
+        }
         if (!canBeDamaged)
         {
             return;
@@ -350,10 +368,17 @@ public class Player : MonoBehaviour
         }
     }
 
-    private IEnumerator DDDamaged()
+    private IEnumerator DDDamaged(bool heal = false)
     {
         StartCoroutine(DecreaseSlider(sliderHP, .2f, health / maxHealth));
-        spriteRenderer1.color = Color.red;
+        if (heal)
+        {
+            spriteRenderer1.color = Color.green;
+        }
+        else
+        {
+            spriteRenderer1.color = Color.red;
+        }
         yield return new WaitForSeconds(.2f);
         if (health > 0)
             spriteRenderer1.color = Color.white;

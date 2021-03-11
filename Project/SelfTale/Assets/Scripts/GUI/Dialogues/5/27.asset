@@ -18,7 +18,7 @@ MonoBehaviour:
   lines:
   - lineId: 0
     speed: 1
-    faceId: 30
+    faceId: 10021
     speaker: "\u0418\u043D\u0442\u0435\u0442"
     text: "\u0422\u0435\u043B\u0435\u043F\u043E\u0440\u0442\u0430\u0446\u0438\u044F
       \u0433\u043E\u0442\u043E\u0432\u0430, \u044F \u0430\u043A\u0442\u0438\u0432\u0438\u0440\u0443\u044E

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueDisplayer : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class DialogueDisplayer : MonoBehaviour
     [SerializeField] GameObject dialogueBox;
     [SerializeField] TextMeshProUGUI nameBox;
     [SerializeField] TextMeshProUGUI mainBox;
+    [SerializeField] Image imageBox;
+
     [SerializeField] GameObject nextBox;
     [SerializeField] GameObject buttons;
     [SerializeField] public GameObject healthBars;
@@ -30,7 +33,7 @@ public class DialogueDisplayer : MonoBehaviour
     private GameObject[] choicesList;
     [SerializeField] PhaseController phaseController;
 
-    
+    [SerializeField] SpeakerData speakerFaces;
 
     private void Awake()
     {
@@ -62,7 +65,7 @@ public class DialogueDisplayer : MonoBehaviour
         }
 
 
-        if (dialogueBox.activeSelf && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)))
+        if (dialogueBox.activeSelf && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Z)))
         {
             if (playingSentence)
             {
@@ -87,7 +90,7 @@ public class DialogueDisplayer : MonoBehaviour
         
         foreach(Transform transform in buttons.transform)
         {
-            transform.GetComponent<UnityEngine.UI.RawImage>().enabled = false;
+            transform.GetComponent<RawImage>().enabled = false;
         }
         dialogue1 = dialogue;
         mainBox.text = "";
@@ -114,6 +117,7 @@ public class DialogueDisplayer : MonoBehaviour
             }
             phaseController.DialogueAction(dialogue1.DialogueID, nextLine.lineId);
             nameBox.text = nextLine.speaker;
+            imageBox.sprite = speakerFaces.GetFaceFromID(nextLine.faceId);
             StartCoroutine(TextDisplayer(nextLine.text, nextLine.speed));
             choiceBox.SetActive(false);
         }
