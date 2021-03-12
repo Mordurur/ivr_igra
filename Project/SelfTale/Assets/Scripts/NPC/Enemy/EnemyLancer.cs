@@ -133,11 +133,11 @@ public class EnemyLancer : EnemyBase
 
     protected override void FixedUpdate()
     {
-        if (facingRight && velocity.x < 0)
+        if (facingRight && velocity.x < 0 && canWalk)
         {
             Flip();
         }
-        else if (!facingRight && velocity.x > 0)
+        else if (!facingRight && velocity.x > 0 && canWalk)
         {
             Flip();
         }

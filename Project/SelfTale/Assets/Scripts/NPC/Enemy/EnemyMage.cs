@@ -266,7 +266,7 @@ public class EnemyMage : EnemyBase
     {
         foreach (GameObject knife in allKnifes)
         {
-            if (knife)
+            if (knife != null)
             {
                 Destroy(knife);
             }

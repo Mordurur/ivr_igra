@@ -73,7 +73,10 @@ public class Lvl3 : PhaseController
         }
         foreach (GameObject obj in arrayList)
         {
-            obj.GetComponent<EnemyBase>().Damage(99999,100,0);
+            if (obj != null)
+            {
+                obj.GetComponent<EnemyBase>().Damage(99999,100,0);
+            }
         }
         if (levelPhase == 1)
             displayer.Display(ph2Dialogue);
